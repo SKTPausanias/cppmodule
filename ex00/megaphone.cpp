@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <stdio.h>
-#include <iomanip>
 
 int main(int argc, char **av)
 {
