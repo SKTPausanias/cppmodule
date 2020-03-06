@@ -56,22 +56,35 @@ void	ft_add(Contact *contact)
 	getline(std::cin, contact->darkest_secret);
 }
 
+std::string ft_change(std::string str)
+{
+	if (str.length() > 10)
+	{
+		str = str.substr(0, 9);
+		str.push_back('.');
+	}
+	return str;
+}
+
 void	ft_search(Contact contacts[8], int i)
 {
 	int j;
 	int index;
 
 	j = 0;
-	std::cout << "Index     | first name | last_name | nickname" << std::endl;
-	while (j < i)
+	std::cout << "     Index|first name|last name | nickname" << std::endl;
+	while (j < i && j < 8)
 	{
-		std::cout << j << std::setw(5) << contacts[j].first_name << std::setw(5) << contacts[j].last_name << std::setw(5) << contacts[j].nickname << std::endl;
+		std::cout << std::right << std::setw(10) << j << "|";
+		std::cout << std::right << std::setw(10) << ft_change(contacts[j].first_name) << "|";
+		std::cout << std::right << std::setw(10) << ft_change(contacts[j].last_name) << "|";
+		std::cout << std::right << std::setw(10) << ft_change(contacts[j].nickname) << std::endl;
 		j++;
 	}
-	std::cout << "----------------------------------------------" << std::endl;
+	std::cout << "------------------------------------------" << std::endl;
 	std::cout << "Insert Index :";
 	std::cin >> index;
-	if (index < 0 || index >= i)
+	if (index < 0 || index >= i || index >= 8)
 		std::cout << "Invalid Index" << std::endl;
 	else
 	{
@@ -86,6 +99,7 @@ void	ft_search(Contact contacts[8], int i)
 		std::cout << "Favourite Meal: " << contacts[index].favourite_meal << std::endl;
 		std::cout << "Underwear Color: " << contacts[index].underwear_color << std::endl;
 		std::cout << "Darkest Secret: " << contacts[index].darkest_secret << std::endl;
+		std::cout << std::endl;
 	}
 }
 
