@@ -13,21 +13,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-
-class Contact {
-	public:
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string login;
-		std::string postal_adress;
-		std::string email_adress;
-		std::string phone_number;
-		std::string birthday;
-		std::string favourite_meal;
-		std::string underwear_color;
-		std::string darkest_secret;
-};
+#include "contact.class.hpp"
 
 void	ft_add(Contact *contact)
 {
