@@ -134,3 +134,13 @@ int Account::checkAmount(void) const
 {
 	
 }
+
+void Account::displayStatus( void ) const
+{
+	Account::_displayTimestamp();
+	std::cout << " index:" << _accountIndex << ";";
+	std::cout << "amount:" << _amount << ";";
+	std::cout << "deposits:" << _nbDeposits << ";";
+	std::cout << "withdrawals:" << _nbWithdrawals << std::endl;
+
+}
