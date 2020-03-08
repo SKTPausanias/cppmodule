@@ -11,8 +11,14 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include "ZombieEvent.hpp"
 
 int main()
 {
-	
+	Zombie new_zombie("loco", "miguel");
+	new_zombie.announce();
+
+	ZombieEvent new_zevent("zaragocista");
+	new_zevent.setZombieType("Zaragocista de corazón");
+	new_zevent.newZombie("Manuel");
 }
