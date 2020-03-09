@@ -15,10 +15,16 @@
 
 int main()
 {
-	Zombie new_zombie("loco", "miguel");
-	new_zombie.announce();
+	Zombie z1("loco", "miguel");
+	z1.announce();
 
 	ZombieEvent new_zevent("zaragocista");
 	new_zevent.setZombieType("Zaragocista de corazón");
-	new_zevent.newZombie("Manuel");
+	Zombie *zb = new_zevent.newZombie("Manuel");
+	zb->announce();
+	delete zb;
+
+	new_zevent.randomChump();
+	new_zevent.randomChump();
+	new_zevent.randomChump();
 }

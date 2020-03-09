@@ -12,6 +12,10 @@
 
 #include "ZombieEvent.hpp"
 
+const std::string names[] = {
+	"adreeee", "Puado", "luisitoSuarez", "guti"
+};
+
 ZombieEvent::ZombieEvent(std::string type)
 {
 	_type = type;
@@ -34,11 +38,8 @@ void ZombieEvent::setZombieType(std::string type)
 
 std::string random_name()
 {
-	const std::string names[] = {
-		"adreeee", "Puado", "luisitoSuarez", "guti"
-	};
-
-	return names[rand() % 4];
+	srand((unsigned) time(0));
+	return (names[rand() % 4]);
 }
 
 void ZombieEvent::randomChump() const

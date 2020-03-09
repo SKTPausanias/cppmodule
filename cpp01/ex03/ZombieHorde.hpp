@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/08 13:04:33 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/08 13:04:35 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/03/09 12:34:41 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/03/09 12:34:43 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef ZOMBIE_HORDE_HPP
+# define ZOMBIE_HORDE_HPP
 
-int main()
+#include "Zombie.hpp"
+#include <time.h>
+
+class ZombieHorde
 {
-	Pony *ponyHeap = ponyOnTheHeap();
-	Pony ponyStack = ponyOnTheStack();
+	private:
+		int _n;
+		Zombie *_zombies;
+	public:
+		ZombieHorde(int n);
+		~ZombieHorde();
+		void announce() const;
+};
 
-	ponyHeap->color = "yellow";
-	ponyStack.color = "blue";
-
-	delete ponyHeap;
-
-	
-}
+#endif

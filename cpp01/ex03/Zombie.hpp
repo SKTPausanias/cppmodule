@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/08 13:04:33 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/08 13:04:35 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/03/09 12:34:00 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/03/09 12:34:02 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int main()
+#include <iostream>
+#include <string>
+
+class Zombie
 {
-	Pony *ponyHeap = ponyOnTheHeap();
-	Pony ponyStack = ponyOnTheStack();
+	private:
+		std::string _name, _type;
+	public:
+		Zombie(std::string name, std::string type);
+		Zombie();
+		std::string get_name() const;
+		std::string get_type() const;
+		void announce();
+};
 
-	ponyHeap->color = "yellow";
-	ponyStack.color = "blue";
+#endif
 
-	delete ponyHeap;
-
-	
-}

@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/08 13:04:33 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/08 13:04:35 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/03/09 12:34:06 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/03/09 12:34:08 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "Zombie.hpp"
 
-int main()
+Zombie::Zombie(std::string name, std::string type)
 {
-	Pony *ponyHeap = ponyOnTheHeap();
-	Pony ponyStack = ponyOnTheStack();
+	_name = name;
+	_type = type;
+}
 
-	ponyHeap->color = "yellow";
-	ponyStack.color = "blue";
+std::string Zombie::get_name() const
+{
+	return _name;
+}
 
-	delete ponyHeap;
+std::string Zombie::get_type() const
+{
+	return _type;
+}
 
-	
+void Zombie::announce()
+{
+	std::cout << "<" << _name << " (" << _type << ")> Braiiiiiiinnnssss..." << std::endl;	
 }
