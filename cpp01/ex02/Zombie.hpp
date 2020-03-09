@@ -22,6 +22,7 @@ class Zombie
 		std::string _name, _type;
 	public:
 		Zombie(std::string type, std::string name);
+		Zombie(void);
 
 		std::string get_name()	const;
 		std::string get_type()	const;

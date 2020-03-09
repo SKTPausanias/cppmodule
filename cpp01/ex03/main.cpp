@@ -10,4 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
+int main()
+{
+	ZombieHorde zombies(8);
+	zombies.announce();
+	zombies.~ZombieHorde();
+}

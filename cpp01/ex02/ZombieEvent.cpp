@@ -38,7 +38,6 @@ void ZombieEvent::setZombieType(std::string type)
 
 std::string random_name()
 {
-	srand((unsigned) time(0));
 	return (names[rand() % 4]);
 }
 

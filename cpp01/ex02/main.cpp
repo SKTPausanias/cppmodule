@@ -24,7 +24,6 @@ int main()
 	zb->announce();
 	delete zb;
 
-	new_zevent.randomChump();
-	new_zevent.randomChump();
+	srand(time(NULL));
 	new_zevent.randomChump();
 }

@@ -21,9 +21,10 @@ ZombieHorde::ZombieHorde(int n): _n(n)
 {
 	_zombies = new Zombie[n];
 	int i = 0;
+	srand(time(NULL));
 	while (i < n)
 	{
-		_zombies[i] = Zombie(names[rand() % 8], "locos");
+		_zombies[i] = Zombie(names[rand() % 8], "apostol");
 		i++;
 	}
 }
