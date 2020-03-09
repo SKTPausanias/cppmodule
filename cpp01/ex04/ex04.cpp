@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/09 12:34:11 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/09 12:34:13 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/03/09 18:56:55 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/03/09 18:58:10 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include <iostream>
+#include <string>
 
 int main()
 {
-	ZombieHorde zombies(8);
-	zombies.announce();
+	std::string str = "HI THIS IS BRAIN";
+	std::string *ptr = &str;
+	std::string &ref = str;
+
+	std::cout << *ptr << std::endl;
+	std::cout << ref << std::endl;
 }

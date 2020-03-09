@@ -17,7 +17,8 @@ const std::string names[] = {
 	"Bartolomé", "Mateo", "Felipe", "Tomás"
 };
 
-ZombieHorde::ZombieHorde(int n): _n(n)
+ZombieHorde::ZombieHorde(int n):
+	_n(n)
 {
 	_zombies = new Zombie[n];
 	int i = 0;
