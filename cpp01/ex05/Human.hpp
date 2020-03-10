@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 19:20:10 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/09 19:46:40 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/03/10 12:43:33 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,10 @@
 class Human
 {
 private:
-	const Brain 
+	Brain _brain;
 public:
-	Human(/* args */);
-	~Human();
+	std::string identify() const;
+	Brain get_brain();
 };
-
-Human::Human(/* args */)
-{
-}
-
-Human::~Human()
-{
-}
 
 #endif

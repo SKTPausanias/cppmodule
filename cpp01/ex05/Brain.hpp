@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 19:19:05 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/09 19:48:25 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/03/10 12:17:06 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,10 @@
 class Brain
 {
 private:
-	/* data */
+	int consistency;
 public:
-	Brain(/* args */);
-	~Brain();
+	int get_consistency() const;
 	std::string identify() const;
 };
-
-Brain::Brain(/* args */)
-{
-}
-
-Brain::~Brain()
-{
-}
 
 #endif
