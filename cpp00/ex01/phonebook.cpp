@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 14:23:32 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/03 14:23:33 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/03/10 15:23:56 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,22 +70,31 @@ void	ft_search(Contact contacts[8], int i)
 	std::cout << "------------------------------------------" << std::endl;
 	std::cout << "Insert Index :";
 	std::cin >> index;
-	if (index < 0 || index >= i || index >= 8)
-		std::cout << "Invalid Index" << std::endl;
+	if (!std::cin.fail())
+	{
+		if (index < 0 || index >= i || index >= 8)
+			std::cout << "Invalid Index" << std::endl;
+		else
+		{
+			std::cout << "First name: " << contacts[index].first_name << std::endl;
+			std::cout << "Last name: " << contacts[index].last_name << std::endl;
+			std::cout << "Nickname: " << contacts[index].nickname << std::endl;
+			std::cout << "Login: " << contacts[index].login << std::endl;
+			std::cout << "Postal Adress: " << contacts[index].postal_adress << std::endl;
+			std::cout << "Email Adress: " << contacts[index].email_adress << std::endl;
+			std::cout << "Phone Number: " << contacts[index].phone_number << std::endl;
+			std::cout << "Birthday: " << contacts[index].birthday << std::endl;
+			std::cout << "Favourite Meal: " << contacts[index].favourite_meal << std::endl;
+			std::cout << "Underwear Color: " << contacts[index].underwear_color << std::endl;
+			std::cout << "Darkest Secret: " << contacts[index].darkest_secret << std::endl;
+			std::cout << std::endl;
+		}
+	}
 	else
 	{
-		std::cout << "First name: " << contacts[index].first_name << std::endl;
-		std::cout << "Last name: " << contacts[index].last_name << std::endl;
-		std::cout << "Nickname: " << contacts[index].nickname << std::endl;
-		std::cout << "Login: " << contacts[index].login << std::endl;
-		std::cout << "Postal Adress: " << contacts[index].postal_adress << std::endl;
-		std::cout << "Email Adress: " << contacts[index].email_adress << std::endl;
-		std::cout << "Phone Number: " << contacts[index].phone_number << std::endl;
-		std::cout << "Birthday: " << contacts[index].birthday << std::endl;
-		std::cout << "Favourite Meal: " << contacts[index].favourite_meal << std::endl;
-		std::cout << "Underwear Color: " << contacts[index].underwear_color << std::endl;
-		std::cout << "Darkest Secret: " << contacts[index].darkest_secret << std::endl;
-		std::cout << std::endl;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Index error" << std::endl;
 	}
 }
 
@@ -100,7 +109,7 @@ int main()
 	{
 		std::cout << "Enter a command: (ADD, SEARCH, EXIT)" << std::endl;
 		std::cout << ">_";
-		getline(std::cin, command);
+		std::cin >> command;
 		if (command == "ADD")
 		{
 			if (i < 8)
