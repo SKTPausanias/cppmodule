@@ -22,5 +22,5 @@ std::string Brain::identify() const
 {
 	std::stringstream str;
 	str << std::hex << std::showbase << (unsigned long)this;
-	std::cout << str.str();
+	return str.str();
 }

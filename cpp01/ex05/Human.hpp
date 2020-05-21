@@ -21,7 +21,7 @@ private:
 	Brain _brain;
 public:
 	std::string identify() const;
-	Brain get_brain();
+	Brain &getBrain();
 };
 
 #endif
