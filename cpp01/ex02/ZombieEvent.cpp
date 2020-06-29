@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: anias <anias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 14:31:02 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/08 14:31:03 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/06/29 18:25:40 by anias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
 const std::string names[] = {
-	"adreeee", "Puado", "luisitoSuarez", "guti"
+	"vigaray", "Puado", "luisitoSuarez", "guti"
 };
 
 ZombieEvent::ZombieEvent(std::string type)
