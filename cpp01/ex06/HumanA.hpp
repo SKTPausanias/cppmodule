@@ -6,7 +6,7 @@
 /*   By: anias <anias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 01:51:31 by anias             #+#    #+#             */
-/*   Updated: 2020/06/29 19:39:44 by anias            ###   ########.fr       */
+/*   Updated: 2020/06/29 21:15:23 by anias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 class HumanA
 {
 private:
-    Weapon _weapon;
+    Weapon &_weapon;
     std::string _name;
 public:
-    HumanA(std::string name, Weapon weapon);
+    HumanA(std::string name, Weapon &weapon);
     void attack();
 };
 
