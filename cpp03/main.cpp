@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 20:22:22 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/07 20:26:21 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/08 10:51:42 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int main()
 {
+	
+	FragTrap a = FragTrap("loco");
+	FragTrap b(a);
 	return 0;
 }
