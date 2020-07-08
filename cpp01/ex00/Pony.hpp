@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 13:03:00 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/08 13:03:02 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/02 20:06:45 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Pony
 public:
 	std::string color;
 };
+
 Pony *ponyOnTheHeap();
 Pony ponyOnTheStack();
 

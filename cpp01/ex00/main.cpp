@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 13:04:33 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/08 13:04:35 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/03 14:54:57 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int main()
 {
-	Pony *ponyHeap = ponyOnTheHeap();
-	Pony ponyStack = ponyOnTheStack();
+    Pony *onTheHeap = ponyOnTheHeap();
+    Pony onTheStack = ponyOnTheStack();
 
-	ponyHeap->color = "yellow";
-	ponyStack.color = "blue";
+    onTheHeap->color = "yellow";
+    onTheStack.color = "pink";
 
-	delete ponyHeap;
-
-	
+    std::cout << onTheHeap->color << std::endl;
+    std::cout << onTheStack.color << std::endl;
+    
+    delete onTheHeap;
 }

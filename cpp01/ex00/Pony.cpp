@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 13:03:05 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/03/08 13:03:07 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/02 20:35:08 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 Pony *ponyOnTheHeap()
 {
-	return new Pony();
+	return new Pony(); //new asigna memoria para un objeto y devuelve la dirección
 }
 
-Pony ponyOntheStack()
+Pony ponyOnTheStack()
 {
 	Pony ponyStack;
 	return ponyStack;
