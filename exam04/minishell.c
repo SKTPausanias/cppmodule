@@ -88,6 +88,7 @@ int ft_pipe(int i, int end, char **av, char **env)
 		waitpid(pid, &status, 0);
 		dup2(fd[0], 0);
         close(fd[1]);
+		printf("lol\n");
 	}
 	return 0;
 }
@@ -103,8 +104,11 @@ void exec_cmd(int i, int end, char **av, char **env)
 		{
 			while (strcmp(av[i], "|") != 0)
 				i++;
+			printf("%s\n", av[start]);
+			printf("%s\n", av[i]);
 			ft_pipe(start, i, av, env);
-			start = i + 1;
+			i++;
+			start = i;
 		}
 		else
 			do_cmd(i, end, av, env);
@@ -124,10 +128,14 @@ int main(int argc, char **av, char **env)
 			while (strcmp(av[i], ";") != 0)
 				i++;
 			exec_cmd(start, i, av, env);
-			start = i + 1;
+			i++;
+			start = i;
 		}
 		else
+		{
+			printf("What\n");
 			exec_cmd(i, argc, av, env);
+		}
 		i++;
 	}
 	return (0);	
