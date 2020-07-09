@@ -1,6 +1,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 int ft_strlen(char *str)
 {
@@ -38,12 +41,14 @@ int do_cmd(int i, int end, char **av, char **env)
 {
 	char **args = malloc(sizeof(char*) * ((end - i) + 1));
 	int j = i;
+	int h = 0;
 	while (j < end)
 	{
-		args[j] = ft_strdup(av[j]);
+		args[h] = ft_strdup(av[j]);
+		h++;
 		j++;
 	}
-	args[j] = "NULL";
+	args[h] = '\0';
 	if (strcmp(av[i], "cd") == 0)
 	{
 		if ((end - i) != 1)
@@ -52,7 +57,16 @@ int do_cmd(int i, int end, char **av, char **env)
 			printf("error: cd: cannot change directory to \n");
 	}
 	else
-		execve(av[i], args, env);
+	{
+		int status;
+		pid_t pid;
+		pid = fork();
+		if (pid == 0)
+			execve(av[i], args, env);
+		else
+			waitpid(pid, &status, 0);
+	}
+	return 0;
 }
 
 int ft_pipe(int i, int end, char **av, char **env)
@@ -60,8 +74,10 @@ int ft_pipe(int i, int end, char **av, char **env)
 	int fd[2];
 	pipe(fd);
 	pid_t pid;
+	int status;
 
-	if (!fork())
+	pid = fork();
+	if (pid == 0)
 	{
 		dup2(fd[1], 1);
 		do_cmd(i, end, av, env);
@@ -69,22 +85,22 @@ int ft_pipe(int i, int end, char **av, char **env)
 	}
 	else
 	{
-		wait(NULL);
+		waitpid(pid, &status, 0);
 		dup2(fd[0], 0);
         close(fd[1]);
 	}
+	return 0;
 }
 
-int exec_cmd(int i, int end, char **av, char **env)
+void exec_cmd(int i, int end, char **av, char **env)
 {
 	int start = i;
 	if (strcmp(av[i], ";") == 0)
-		return 0;
+		return ;
 	while (i < end)
 	{
 		if (strchr2(i, end, av, "|") == 1)
 		{
-			start = i;
 			while (strcmp(av[i], "|") != 0)
 				i++;
 			ft_pipe(start, i, av, env);
@@ -94,7 +110,6 @@ int exec_cmd(int i, int end, char **av, char **env)
 			do_cmd(i, end, av, env);
 		i++;
 	}
-	return 1;
 }
 
 int main(int argc, char **av, char **env)
@@ -106,11 +121,10 @@ int main(int argc, char **av, char **env)
 	{
 		if (strchr2(i, argc, av, ";") == 1)
 		{
-			if (strcmp(av[i], ";") == 0)
-			{
-				exec_cmd(start, i, av, env);
-				start = i + 1;
-			}
+			while (strcmp(av[i], ";") != 0)
+				i++;
+			exec_cmd(start, i, av, env);
+			start = i + 1;
 		}
 		else
 			exec_cmd(i, argc, av, env);
