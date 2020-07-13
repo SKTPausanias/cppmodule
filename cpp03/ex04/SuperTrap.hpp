@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 18:33:22 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 18:37:54 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 19:09:10 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ public:
 
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
-
-	/*void ninjaShoebox(const FragTrap &target);
-    void ninjaShoebox(const ScavTrap &target);
-	void ninjaShoebox(const SuperTrap &target);
-	void vaulthunter_dot_exe(std::string const & target);*/
 };
 
 #endif
