@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 17:21:23 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 18:20:54 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/07/13 18:33:22 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/07/13 18:37:54 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP
-#define SCAVTRAP
+#ifndef SUPER_TRAP_HPP
+#define SUPER_TRAP_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap 
+class SuperTrap : public NinjaTrap, public FragTrap 
 {
 public:
-	ScavTrap(std::string _name);
-	~ScavTrap();
-	ScavTrap(const ScavTrap &c);
-	ScavTrap &operator=(const ScavTrap &c);
+	SuperTrap(std::string _name);
+	~SuperTrap();
+	SuperTrap(const SuperTrap &c);
+	SuperTrap &operator=(const SuperTrap &c);
 
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
-	void challengeNewcomer(void);
+
+	/*void ninjaShoebox(const FragTrap &target);
+    void ninjaShoebox(const ScavTrap &target);
+	void ninjaShoebox(const SuperTrap &target);
+	void vaulthunter_dot_exe(std::string const & target);*/
 };
 
 #endif
