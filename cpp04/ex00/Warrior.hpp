@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Warrior.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/13 19:25:22 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 01:00:56 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/07/14 00:51:26 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/07/14 00:54:16 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#ifndef WARRIOR_HPP
+#define WARRIOR_HPP
 
-#include <string>
-#include <iostream>
 #include "Victim.hpp"
 
-class Peon : public Victim
+class Warrior : public Victim
 {
 private:
-	Peon();
+    Warrior();
 public:
-	Peon(std::string name);
-	~Peon();
-	Peon(const Peon &c);
-	Peon &operator=(const Peon &c);
+    Warrior(std::string name);
+    ~Warrior();
+    Warrior(const Warrior &c);
+    Warrior &operator=(const Warrior &c);
 
-	virtual void getPolymorphed() const;
+    virtual void getPolymorphed() const;
 };
 
 #endif
