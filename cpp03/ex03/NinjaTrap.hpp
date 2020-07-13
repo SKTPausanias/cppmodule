@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 17:33:56 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 18:23:46 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 20:34:34 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 class NinjaTrap : virtual public ClapTrap 
 {
+private:
+	NinjaTrap();
 public:
 	NinjaTrap(std::string _name);
 	~NinjaTrap();

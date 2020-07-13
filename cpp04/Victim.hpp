@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Victim.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 17:21:23 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 20:32:42 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/07/13 19:23:50 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/07/13 20:41:59 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP
-#define SCAVTRAP
+#ifndef VICTIM_HPP
+#define VICTIM_HPP
 
+#include <string>
 #include <iostream>
-#include "ClapTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap 
+class Victim
 {
-private:
-	ScavTrap();
-public:
-	ScavTrap(std::string _name);
-	~ScavTrap();
-	ScavTrap(const ScavTrap &c);
-	ScavTrap &operator=(const ScavTrap &c);
+protected:
+	std::string _name;
 
-	void rangedAttack(std::string const & target);
-	void meleeAttack(std::string const & target);
-	void challengeNewcomer(void);
+	Victim();
+public:
+	Victim(std::string name);
+	~Victim();
+	Victim(const Victim &c);
+	Victim &operator=(const Victim &c);
+
+	const std::string getName(void) const;
+	const std::string getTitle(void) const;
+	virtual void getPolymorphed() const;
 };
+
+std::ostream & operator<<(std::ostream &out, Victim const &c);
 
 #endif

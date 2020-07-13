@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 20:22:14 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/08 16:49:52 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 20:30:37 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class FragTrap
 {
 private:
+	FragTrap();
 	int hit_points;
 	int max_hit_points;
 	int energy_points;

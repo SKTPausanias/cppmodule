@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 18:08:15 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 18:00:34 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 20:34:04 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ClapTrap
 {
 protected:
+	ClapTrap();
 	int hit_points;
 	int max_hit_points;
 	int energy_points;

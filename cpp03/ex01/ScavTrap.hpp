@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 17:21:23 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/08 17:35:24 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 20:31:39 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ScavTrap
 {
 private:
+	ScavTrap();
 	int hit_points;
 	int max_hit_points;
 	int energy_points;

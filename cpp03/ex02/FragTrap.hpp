@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 20:22:14 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 18:21:45 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 20:32:29 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 class FragTrap : virtual public ClapTrap
 {
+private:
+	FragTrap();
 public:
 	FragTrap(std::string _name);
 	~FragTrap();
