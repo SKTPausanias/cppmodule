@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 18:08:15 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/08 18:18:59 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 17:19:16 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	int hit_points;
 	int max_hit_points;
 	int energy_points;
@@ -28,7 +28,9 @@ private:
 	int ranged_attack_dmg;
 	int armor_dmg_reduction;
 public:
-	ClapTrap(std::string _name);
+	ClapTrap(std::string _name, int _hit_points, int _max_hit_points,
+			int _energy_points, int _max_energy_points, int _level,
+			int _melee_attack_dmg, int _ranged_attack_dmg, int _armor_dmg_reduction);
 	~ClapTrap();
 	ClapTrap(const ClapTrap &c);
 	ClapTrap &operator=(const ClapTrap &c);

@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 17:21:23 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/08 17:35:24 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 17:05:58 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,10 @@
 #define SCAVTRAP
 
 #include <iostream>
+#include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap 
 {
-private:
-	int hit_points;
-	int max_hit_points;
-	int energy_points;
-	int max_energy_points;
-	int level;
-	std::string name;
-	int melee_attack_dmg;
-	int ranged_attack_dmg;
-	int armor_dmg_reduction;
 public:
 	ScavTrap(std::string _name);
 	~ScavTrap();
@@ -35,8 +26,6 @@ public:
 
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 	void challengeNewcomer(void);
 };
 

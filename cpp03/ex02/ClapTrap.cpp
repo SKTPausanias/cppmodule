@@ -6,15 +6,18 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 18:07:34 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/08 18:13:48 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 17:11:56 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string _name): hit_points(100), max_hit_points(100), energy_points(100), 
-                                        max_energy_points(100), level(1), name(_name),
-                                        melee_attack_dmg(30), ranged_attack_dmg(20), armor_dmg_reduction(5)
+ClapTrap::ClapTrap(std::string _name, int _hit_points, int _max_hit_points,
+			int _energy_points, int _max_energy_points, int _level,
+			int _melee_attack_dmg, int _ranged_attack_dmg, int _armor_dmg_reduction): 
+            hit_points(_hit_points), max_hit_points(_max_hit_points), energy_points(_energy_points), 
+            max_energy_points(_max_energy_points), level(_level), name(_name),
+            melee_attack_dmg(_melee_attack_dmg), ranged_attack_dmg(_ranged_attack_dmg), armor_dmg_reduction(_armor_dmg_reduction)
 {
     std::cout << "CL4P-TP " << this->name << ": Created" << std::endl;
 }
