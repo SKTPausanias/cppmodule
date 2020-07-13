@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 20:22:14 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/08 18:33:26 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 12:58:14 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ public:
 
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 	void vaulthunter_dot_exe(std::string const & target);
 };
 

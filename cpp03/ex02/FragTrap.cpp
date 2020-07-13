@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 20:22:19 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/08 18:31:03 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/13 13:28:21 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static const std::string attacks[] =
     "Boogie time!"
 };
 
-FragTrap::FragTrap(std::string _name): hit_points(100), max_hit_points(100), energy_points(100), 
+FragTrap::FragTrap(std::string _name):  ClapTrap(_name) ,hit_points(100), max_hit_points(100), energy_points(100), 
                                         max_energy_points(100), level(1), name(_name),
                                         melee_attack_dmg(30), ranged_attack_dmg(20), armor_dmg_reduction(5)
 {
