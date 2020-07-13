@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Peon.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 19:25:18 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 20:41:17 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 00:46:26 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,24 @@
 
 Peon::Peon(std::string name): Victim(name)
 {
-    std::cout << "Some random Peon called " << _name << " just appeared!" << std::endl;
+    std::cout << "Zog zog." << std::endl;
 }
 
 Peon::~Peon()
 {
-	std::cout << "Peon " << _name << " just died for no apparent reason!" << std::endl;
+	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon::Peon(const Peon &c)
+Peon::Peon(const Peon &c): Victim(c._name)
 {
-	std::cout << "Some random Peon called " << _name << " just appeared!" << std::endl;
+	std::cout << "Zog zog." << std::endl;
 	*this = c;
 }
 
 Peon &Peon::operator=(const Peon &c)
 {
 	this->_name = c._name;
-}
-
-const std::string Peon::getName(void) const
-{
-	return this->_name;
+	return *this;
 }
 
 void Peon::getPolymorphed() const

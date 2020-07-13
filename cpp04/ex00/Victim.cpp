@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Victim.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 19:23:47 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 20:19:01 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 00:42:11 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Victim::Victim(const Victim &c)
 Victim &Victim::operator=(const Victim &c)
 {
 	this->_name = c._name;
+	return *this;
 }
 
 const std::string Victim::getName(void) const
