@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 01:22:58 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 13:42:06 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 17:38:28 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,12 @@ class Character
         void recoverAP();
         void equip(AWeapon*);
         void attack(Enemy*);
+        int getAP(void) const;
+        AWeapon *getWeapon() const;
         
         std::string const &getName() const;
 };
+
+std::ostream &operator<<(std::ostream &out, Character const &c);
 
 #endif

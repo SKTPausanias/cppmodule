@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Enemy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 01:23:04 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 12:34:34 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 17:40:40 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Enemy
         std::string _type;
     public:
         Enemy(int hp, std::string const & type);
-        ~Enemy();
+        virtual ~Enemy();
         Enemy(const Enemy &c);
         Enemy &operator=(const Enemy &c);
         
