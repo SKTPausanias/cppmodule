@@ -6,12 +6,14 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 18:26:02 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 18:45:04 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:50:53 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ISQUAD_HPP
 #define ISQUAD_HPP
+
+#include "ISpaceMarine.hpp"
 
 class ISquad
 {

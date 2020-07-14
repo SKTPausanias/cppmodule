@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Sorcerer.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 19:22:58 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 00:45:09 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:56:51 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ Sorcerer &Sorcerer::operator=(const Sorcerer &c)
 	return *this;
 }
 
-const std::string Sorcerer::getName(void) const
+const std::string &Sorcerer::getName(void) const
 {
 	return this->_name;
 }
 
-const std::string Sorcerer::getTitle(void) const
+const std::string &Sorcerer::getTitle(void) const
 {
 	return this->_title;
 }

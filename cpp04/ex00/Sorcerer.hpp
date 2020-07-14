@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 19:23:07 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 20:42:07 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:56:35 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ public:
 	Sorcerer(const Sorcerer &c);
 	Sorcerer &operator=(const Sorcerer &c);
 
-	const std::string getName(void) const;
-	const std::string getTitle(void) const;
+	const std::string &getName(void) const;
+	const std::string &getTitle(void) const;
 	void polymorph(Victim const &c) const;
 };
 

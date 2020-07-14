@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 20:22:22 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/08 17:43:30 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 19:28:46 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ int main()
 	s.challengeNewcomer();
 	s.challengeNewcomer();
 	s.challengeNewcomer();
+
 	return 0;
 }
