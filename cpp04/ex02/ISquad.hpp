@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   ISquad.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/14 01:23:29 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 18:37:37 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/07/14 18:26:02 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/07/14 18:45:04 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-#define RADSCORPION_HPP
+#ifndef ISQUAD_HPP
+#define ISQUAD_HPP
 
-#include "Enemy.hpp"
-
-class RadScorpion: public Enemy
+class ISquad
 {
 public:
-	RadScorpion();
-	RadScorpion(RadScorpion const &c);
-	virtual ~RadScorpion();
-    RadScorpion &operator=(RadScorpion const &c);
+	virtual ~ISquad() {}
+	virtual int getCount() const = 0;
+	virtual ISpaceMarine* getUnit(int) const = 0;
+	virtual int push(ISpaceMarine*) = 0;
 };
 
 #endif

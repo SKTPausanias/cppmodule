@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Warrior.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 00:51:26 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 00:54:16 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:37:02 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
     Warrior();
 public:
     Warrior(std::string name);
-    ~Warrior();
+    virtual ~Warrior();
     Warrior(const Warrior &c);
     Warrior &operator=(const Warrior &c);
 

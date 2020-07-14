@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 19:25:22 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 01:00:56 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:36:34 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	Peon();
 public:
 	Peon(std::string name);
-	~Peon();
+	virtual ~Peon();
 	Peon(const Peon &c);
 	Peon &operator=(const Peon &c);
 

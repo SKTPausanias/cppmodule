@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   SuperMutant.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 01:23:35 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 12:24:54 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:37:44 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class SuperMutant: public Enemy
 public:
 	SuperMutant();
 	SuperMutant(SuperMutant const &c);
-	~SuperMutant();
+	virtual ~SuperMutant();
     SuperMutant &operator=(SuperMutant const &c);
 
 	virtual void takeDamage(int damage);

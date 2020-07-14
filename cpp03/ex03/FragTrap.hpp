@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 20:22:14 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 20:34:16 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:33:54 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 	FragTrap();
 public:
 	FragTrap(std::string _name);
-	~FragTrap();
+	virtual ~FragTrap();
 	FragTrap(const FragTrap &c);
 	FragTrap &operator=(const FragTrap &c);
 

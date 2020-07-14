@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 17:33:56 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 20:36:55 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:35:17 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 	NinjaTrap();
 public:
 	NinjaTrap(std::string _name);
-	~NinjaTrap();
+	virtual ~NinjaTrap();
 	NinjaTrap(const NinjaTrap &c);
 	NinjaTrap &operator=(const NinjaTrap &c);
 

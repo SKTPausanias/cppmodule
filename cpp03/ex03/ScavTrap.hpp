@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 17:21:23 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 20:34:47 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:34:14 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 	ScavTrap();
 public:
 	ScavTrap(std::string _name);
-	~ScavTrap();
+	virtual ~ScavTrap();
 	ScavTrap(const ScavTrap &c);
 	ScavTrap &operator=(const ScavTrap &c);
 

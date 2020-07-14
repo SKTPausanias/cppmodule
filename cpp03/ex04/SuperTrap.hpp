@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 18:33:22 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/13 20:37:26 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/14 18:35:43 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	SuperTrap();
 public:
 	SuperTrap(std::string _name);
-	~SuperTrap();
+	virtual ~SuperTrap();
 	SuperTrap(const SuperTrap &c);
 	SuperTrap &operator=(const SuperTrap &c);
 
