@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 18:26:18 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/14 20:29:43 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/15 17:12:49 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,20 @@
 
 #include "ISquad.hpp"
 
-class Squad
+class Squad : public ISquad
 {
+private:
+	int count;
+	ISpaceMarine** units;
 public:
-	virtual ~Squad() {}
-	virtual int getCount() const = 0;
-	virtual ISpaceMarine* getUnit(int) const = 0;
-	virtual int push(ISpaceMarine*) = 0;
+	Squad();
+	virtual ~Squad();
+	Squad(const Squad &c);
+	Squad &operator=(const Squad &c);
+	
+	int getCount() const;
+	ISpaceMarine* getUnit(int) const;
+	int push(ISpaceMarine* unit);
 };
 
 #endif
