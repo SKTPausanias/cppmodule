@@ -6,7 +6,7 @@
 /*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 19:20:30 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/15 20:27:10 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/17 16:43:19 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ Ice::~Ice()
 
 }
 
-Ice::Ice(const Ice &c): AMateria(c)
+Ice::Ice(const Ice &c): AMateria("ice")
 {
+	*this = c;
 }
 
 Ice &Ice::operator=(const Ice &c)
 {
 	this->_xp = c._xp;
-	this->_type = c._type;
 	return *this;
 }
 
