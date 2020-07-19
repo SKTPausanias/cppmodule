@@ -17,15 +17,15 @@ int ft_strlen(char *str)
 
 char *ft_strdup(char *str)
 {
-    char *s1 = malloc(sizeof(char) * (ft_strlen(str) + 1));
+    char *nuevo = malloc(sizeof(char) * (ft_strlen(str) + 1));
     int i = 0;
     while (str[i])
     {
-        s1[i] = str[i];
+        nuevo[i] = str[i];
         i++;
     }
-    s1[i] = '\0';
-    return s1;
+    nuevo[i] = '\0';
+    return nuevo;
 }
 
 int strchr2(int start, int end, char **av, char *str)
@@ -60,7 +60,7 @@ int exec_cmd(int i, int end, char **av, char **env)
         }
         else if (chdir(av[i + 1]) < 0)
         {
-            write(2, "error: cd: cannot change directory to path_to_change\n", ft_strlen("error: cd: cannot change directory to "));
+            write(2, "error: cd: cannot change directory to ", ft_strlen("error: cd: cannot change directory to "));
             write(2, av[i + 1], ft_strlen(av[i + 1]));
             write(2, "\n", 1);
             return 0;
@@ -75,7 +75,7 @@ int exec_cmd(int i, int end, char **av, char **env)
         {
             if (execve(av[i], args, env) < 0)
             {
-                write(2, "error: cannot execute executable_that_failed\n", ft_strlen("error: cannot execute "));
+                write(2, "error: cannot execute ", ft_strlen("error: cannot execute "));
                 write(2, av[i], ft_strlen(av[i]));
                 write(2, "\n", 1);
             }
@@ -83,7 +83,16 @@ int exec_cmd(int i, int end, char **av, char **env)
         }
         else
             waitpid(pid2, &status, 0);
-    }    
+    }
+    j = i;
+    h = 0;
+    while (j < end)
+    {
+        free(args[h]);
+        j++;
+        h++;
+    }
+    free(args);
     return 0;
 }
 
@@ -95,10 +104,10 @@ int ft_pipe(int i, int end, char **av, char **env)
     int status;
 
     pid = fork();
-    /*if (pid < 0)
+    if (pid < 0)
     {
-
-    }*/
+        return 0;
+    }
     if (pid == 0)
     {
         dup2(fd[1], 1);
@@ -109,8 +118,8 @@ int ft_pipe(int i, int end, char **av, char **env)
     {
         waitpid(pid, &status, 0);
         dup2(fd[0], 0);
-        close(fd[1]);
         close(fd[0]);
+        close(fd[1]);
     }
     return 0;
 }
@@ -120,12 +129,12 @@ int check_pipe(int i, int end, char **av, char **env)
     int start = i;
     if (strcmp(av[i], ";") == 0)
         return 0;
-    
+
     while (i < end)
     {
         if (strchr2(i, end, av, "|") == 1)
         {
-            while (strcmp(av[i], "|") != 0)
+            while(strcmp(av[i], "|") != 0)
                 i++;
             ft_pipe(start, i, av, env);
             start = i + 1;
@@ -135,7 +144,7 @@ int check_pipe(int i, int end, char **av, char **env)
             exec_cmd(i, end, av, env);
             break ;
         }
-        i++;        
+        i++;
     }
     return 0;
 }
@@ -149,7 +158,7 @@ int main(int argc, char **av, char **env)
     {
         if (strchr2(i, argc, av, ";") == 1)
         {
-            while (strcmp(av[i], ";") != 0)
+            while(strcmp(av[i], ";") != 0)
                 i++;
             check_pipe(start, i, av, env);
             start = i + 1;
