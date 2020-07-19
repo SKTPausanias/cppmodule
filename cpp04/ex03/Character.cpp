@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 19:20:14 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/17 18:00:41 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/19 13:10:38 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,14 @@ void Character::unequip(int idx)
 		return;
 	for (int i = idx; i < 3; i++)
 	{
-		this->inventory[i]
+		this->inventory[i] = this->inventory[i + 1];
+		this->inventory[i + 1] = nullptr;
 	}
 }
 
-void use(int idx, Character& target);
+void Character::use(int idx, ICharacter& target)
+{
+	if (idx < 0 || idx >= 4 || inventory[idx] == nullptr)
+		return ;
+	inventory[idx]->use(target);
+}

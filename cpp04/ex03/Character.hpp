@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 19:20:21 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/17 17:03:32 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/19 13:11:22 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-class Character
+class Character : public ICharacter
 {
 	private:
 		Character();
@@ -33,7 +33,7 @@ class Character
 
 		void equip(AMateria* m);
 		void unequip(int idx);
-		void use(int idx, Character& target);
+		void use(int idx, ICharacter& target);
 };
 
 #endif
