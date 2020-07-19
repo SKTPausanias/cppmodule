@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 19:20:14 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/19 13:10:38 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/19 21:52:39 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ Character::Character(std::string const &name): _name(name)
 
 Character::~Character()
 {
-	delete[] this->inventory;
+	for (int i = 0; i < 4; i++)
+		delete this->inventory[i];
 }
 
 Character::Character(Character const &c)
@@ -31,7 +32,8 @@ Character::Character(Character const &c)
 Character &Character::operator=(Character const &c)
 {
 	this->_name = c._name;
-	delete[] this->inventory;
+	for (int i = 0; i < 4; i++)
+		delete this->inventory[i];
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = c.inventory[i]->clone();
 	return *this;

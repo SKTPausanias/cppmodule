@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 19:20:12 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/15 20:13:52 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/19 22:29:24 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include "ICharacter.hpp"
 
+class ICharacter;
 class AMateria
 {
 	private:
@@ -32,7 +33,7 @@ class AMateria
 
 		std::string const & getType() const; //Returns the materia type
 		unsigned int getXP() const; //Returns the Materia's XP
-		virtual AMateria* clone() const = 0;
+		virtual AMateria *clone(void) const = 0;
 		virtual void use(ICharacter& target);
 };
 

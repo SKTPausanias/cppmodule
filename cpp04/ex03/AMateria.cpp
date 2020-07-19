@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 19:20:09 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/15 20:01:49 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/19 21:48:37 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type): _type(type), _xp(0)
+AMateria::AMateria(std::string const & type): _xp(0),  _type(type)
 {
 }
 

@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 19:20:50 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/19 18:31:14 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/19 21:55:20 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ MateriaSource::MateriaSource()
 
 MateriaSource::~MateriaSource()
 {
-    delete[] this->known;
+	for (int i = 0; i < 4; i++)
+		delete this->known[i];
 }
 
 MateriaSource::MateriaSource(const MateriaSource &c)
@@ -30,9 +31,11 @@ MateriaSource::MateriaSource(const MateriaSource &c)
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &c)
 {
-    delete[] this->known;
+	for (int i = 0; i < 4; i++)
+		delete this->known[i];
     for (int i = 0; i < 4; i++)
-        this->known[i] = c.known[i]->clone();    
+        this->known[i] = c.known[i]->clone();
+    return *this;
 }
 
 void MateriaSource::learnMateria(AMateria* m)
