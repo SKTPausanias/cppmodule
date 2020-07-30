@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 19:20:45 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/07/19 20:21:35 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/07/30 18:20:46 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ int main()
     ICharacter* me = new Character("me");
     
     AMateria* tmp;
+    AMateria* first = nullptr;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
+    first = tmp;
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
     tmp = src->createMateria("ice");
     me->equip(tmp);
     tmp = src->createMateria("cure");
@@ -32,8 +38,16 @@ int main()
     
     ICharacter* bob = new Character("bob");
     
-    me->use(0, *bob);
-    me->use(1, *bob);
+	std::cout << "materia exp: " << first->getXP() << std::endl;
+	me->use(0, *bob);
+	std::cout << "materia exp: " << first->getXP() << std::endl;
+	me->use(1, *bob);
+	me->use(2, *bob);
+
+	me->unequip(0);
+	std::cout << "materia exp: " << first->getXP() << std::endl;
+	me->use(0, *bob);
+    std::cout << "materia exp: " << first->getXP() << std::endl;
     
     delete bob;
     delete me;
