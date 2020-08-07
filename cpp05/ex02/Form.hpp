@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 16:16:01 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/08/06 13:32:53 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/08/07 14:05:53 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,17 @@ public:
         virtual const char* what() const throw();
     };
 
+    class UnsignedFormException: public std::exception {
+		virtual const char* what() const throw();
+	};
+
     const std::string &getName() const;
     bool isSigned() const;
     int getGradeToSignIn() const;
     int getGradeToExecute() const;
 
     void beSigned(Bureaucrat const &bureaucrat);
+    virtual void execute(Bureaucrat const &bureaucrat) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out, Form const &form);
