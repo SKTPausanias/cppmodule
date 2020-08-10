@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/06 13:21:58 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/08/07 14:12:46 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/08/10 16:25:54 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     PresidentialPardonForm(const PresidentialPardonForm &c);
     PresidentialPardonForm &operator=(const PresidentialPardonForm &c);
 
-    void execute(Bureaucrat const & executor);
+    void execute(Bureaucrat const & executor) const;
 };
 
 #endif

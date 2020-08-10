@@ -3,19 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 13:38:10 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/08/06 12:21:04 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/08/10 17:01:02 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
+    srand(time(NULL));
     Bureaucrat john("John", 100);
 	std::cout << john << std::endl;
 	john.incrementGrade();
@@ -35,10 +39,11 @@ int main()
 
     try
     {
-        Bureaucrat b1("Johnny", 150);
-        Form f1("Formulario", 150, 5);
+        Bureaucrat b1("Johnny", 10);
+        PresidentialPardonForm f1("ur mom");
         b1.signForm(f1);
-        std::cout << "Success: " << b1 << " " << f1 << std::endl;
+        b1.signForm(f1);
+        b1.executeForm(f1);
     }
     catch (std::exception &e)
     {
@@ -47,9 +52,22 @@ int main()
 
     try
     {
-        Bureaucrat b1("Johnny", 150);
-        Form f2("Formulario", 149, 5);
+        Bureaucrat b1("Baby", 1);
+        PresidentialPardonForm f1("ur mom");
+        b1.signForm(f1);
+        b1.executeForm(f1);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }   
+
+    try
+    {
+        Bureaucrat b1("Manuel", 20);
+        RobotomyRequestForm f2("enemy");
         b1.signForm(f2);
+        b1.executeForm(f2);
     }
     catch (std::exception &e)
     {
@@ -58,8 +76,10 @@ int main()
 
 	try
 	{
-		Form formException("Important Form", 100, 1000);
-		std::cout << formException << std::endl;
+        Bureaucrat b1("Rogelio", 20);
+        ShrubberyCreationForm f3("rat");
+        b1.signForm(f3);
+        b1.executeForm(f3);
 	}
 	catch(std::exception const &e)
 	{

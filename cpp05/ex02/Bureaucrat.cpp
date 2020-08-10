@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlaplana <mlaplana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 13:38:07 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/08/06 12:00:55 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/08/10 16:53:48 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,17 +80,29 @@ void Bureaucrat::signForm(Form &form) const
 	{
 		std::cout << *this << " cannot sign " << form
 				<< " because the form is already signed." << std::endl;
+        return ;
 	}
-	else if (form.getGradeToSignIn() < this->_grade)
-	{
-		std::cout << *this << " cannot sign " << form
-				<< " because it's grade is too low." << std::endl;
-	}
-	else
-	{
-		std::cout << *this << " signs " << form << std::endl;
-	}
-	form.beSigned(*this);
+    try
+    {
+        form.beSigned(*this);
+        std::cout << *this << " signs " << form << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+}
+void Bureaucrat::executeForm(Form &form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << _name << " executes " << form.getName() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat)
