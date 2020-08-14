@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 17:50:49 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/08/13 19:06:30 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/08/14 12:38:46 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ public:
 	Intern(const Intern &c);
 	Intern &operator=(const Intern &c);
 
-	Form *makeForm(std::string name, std::string target);
+	Form *makeForm(std::string name, std::string const &target);
 
-	Form *createPresidentialPardonForm(std::string target);
-	Form *createRobotomyRequestForm(std::string target);
-	Form *createShrubberyCreationForm(std::string target);
+	Form *createPresidentialPardonForm(std::string const &target);
+	Form *createRobotomyRequestForm(std::string const &target);
+	Form *createShrubberyCreationForm(std::string const &target);
 };
 
 #endif
