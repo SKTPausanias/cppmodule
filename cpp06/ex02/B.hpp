@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 22:52:03 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/08/22 15:24:15 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/08/21 22:55:45 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/08/22 15:24:00 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#ifndef B_HPP
+#define B_HPP
 
-class Base
+#include "Base.hpp"
+
+class B : public Base
 {
 public:
-    virtual ~Base() {};
+    ~B() {};
 };
 
 #endif
