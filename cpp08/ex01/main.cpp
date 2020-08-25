@@ -5,24 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 01:21:00 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/08/24 15:21:07 by mlaplana         ###   ########.fr       */
+/*   Created: 2020/08/24 18:55:41 by mlaplana          #+#    #+#             */
+/*   Updated: 2020/08/25 16:10:03 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
-#include <iostream>
+#include "span.hpp"
 
 int main()
 {
-    std::vector<int> vec;
-    for (int i = 0; i < 5; i++)
-        vec.push_back(i);
-    std::vector<int>::iterator found = easyfind(vec, 4);
-    if (found == vec.end())
-        std::cout << "cannot find value in vector" << std::endl;
-    else
-        std::cout << "found " << *found << " in vector " << std::endl;
-    if (easyfind(vec, 99) == vec.end())
-        std::cout << "99 not found in vector" << std::endl;
-}
+    Span sp = Span(5);
+    sp.addNumber(5);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+    }
