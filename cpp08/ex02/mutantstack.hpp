@@ -6,7 +6,7 @@
 /*   By: mlaplana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 22:37:49 by mlaplana          #+#    #+#             */
-/*   Updated: 2020/08/27 21:36:50 by mlaplana         ###   ########.fr       */
+/*   Updated: 2020/08/27 22:53:31 by mlaplana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ public:
     {
     }
     
-    MutantStack(const MutantStack &c)
+    MutantStack(const MutantStack &other): std::stack<T>(other)
     {
-        (void)c;
+        *this = other;
     }
     
-    MutantStack &operator=(const MutantStack<T> &c)
+    MutantStack &operator=(const MutantStack<T> &other)
     {
-        (void)c;
+        this->c = other.c;
         return *this;
     }
 
